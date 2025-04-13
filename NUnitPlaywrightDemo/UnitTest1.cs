@@ -14,7 +14,8 @@ namespace NUnitPlaywrightDemo
             // Load configuration
             IConfiguration config = new ConfigurationBuilder()
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile("Properties/launchSettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
             _settings = config.GetSection("TestSettings").Get<TestSettings>();
